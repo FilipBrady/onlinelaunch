@@ -1,17 +1,16 @@
-import badge from '../../images/badge.svg'
+import badge from '../../images/badge.svg';
+import styles from "./FreeConsultation.module.css"
 const FreeConsultation = () => {
   return (
-    <div className='container relative bg-[#1E2D3D] pb-5 pt-2'>
-      <div className="iconTop">
-        <div className='badgeIcon'></div>
+    <div className='container bg-[#1E2D3D]'>
+      <div className={`${styles.iconTop}`}>
+        <div className={`${styles.badgeIcon}`}></div>
       </div>
-      <div className='textThin py-7'>Radi cítite opak smútku?</div>
+      <div className='textThin py-2'>Radi cítite opak smútku?</div>
       <div className='textHeading'>
         Získajte bezplatnú konzultáciu určenú právnické kancelárie
       </div>
-      <button className='bg-pink px-8 py-4 my-8'>
-        Získať konzultáciu zadarmo
-      </button>
+      <button className='button'>Získať konzultáciu zadarmo</button>
     </div>
   );
 };

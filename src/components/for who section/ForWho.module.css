@@ -1,0 +1,56 @@
+.card {
+  @apply p-2 text-blue-darker
+}
+
+.ball {
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  @apply my-4
+}
+
+.bigBall {
+  position: relative;
+  z-index: 10;
+  width: 37px;
+  height: 37px;
+  background-color: white;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(37px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* border-ra: 500px; */
+  transform: rotate(-180deg);
+}
+
+.smallBall {
+  position: absolute;
+  z-index: 0;
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.bottomRight {
+  left: 68%;
+  top: 57%;
+}
+
+.bottomLeft {
+  left: -10%;
+  top: 57%;
+}
+
+.topLeft {
+  left: -10%;
+  top: 0%;
+}
+
+.topRight {
+  left: 68%;
+  top: 0;
+}
