@@ -2,7 +2,7 @@ import Divider from '../divider/Divider';
 
 const LandingPage = () => {
   return (
-    <div className='container bg-[#1E2D3D] shadow-2xl'>
+    <div className='container bg-[#1E2D3D] shadow-2xl mt-0'>
       <div className='textHeading'>
         <span className='font-normal'>Garantované výsledky</span> <br />
         <span className='font-medium'>ONLINE marketingu pre </span> <br />
@@ -14,7 +14,7 @@ const LandingPage = () => {
         najlepších v právnickom odvetvií
       </div>
       <div>
-        <button className=' bg-pink px-8 py-4 my-8'>
+        <button className='button'>
           Získať ONLINE stratégiu
         </button>
       </div>

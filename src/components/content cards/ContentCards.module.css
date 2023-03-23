@@ -1,0 +1,62 @@
+.card {
+  background-color: var(--black-blue-darker-color);
+  color: var(--white-color);
+  @apply text-center px-6 py-8 w-11/12 mx-auto my-3
+}
+
+.cardHeading {
+  @apply text-xl text-center
+}
+
+
+.balls {
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.bigBall {
+  position: relative;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(37px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* border-ra: 500px; */
+  transform: rotate(-180deg);
+}
+
+.smallBall {
+  position: absolute;
+  z-index: 0;
+  width: 33.55px;
+  height: 34.41px;
+  background: #ECEAD7;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.bottomRight {
+  left: 68%;
+  top: 57%;
+}
+
+.bottomLeft {
+  left: -10%;
+  top: 57%;
+}
+
+.topLeft {
+  left: -10%;
+  top: 0%;
+}
+
+.topRight {
+  left: 68%;
+  top: 0;
+}

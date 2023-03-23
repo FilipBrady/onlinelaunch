@@ -1,24 +1,27 @@
+import styles from './ContentCards.module.css';
 const ContentCards = () => {
   return (
-    <div className='container bg-[#ECEAD7] h-full py-5'>
-      <div className='card'>
-        <div className='balls'>
-          <div className='bigBall'></div>
-          <div className='smallBall topLeft'></div>
+    <div className='container bg-[#ECEAD7] h-full '>
+      <div className={`${styles.card}`}>
+        <div className={`${styles.balls}`}>
+          <div className={`${styles.bigBall}`}></div>
+          <div className={`${styles.smallBall} ${styles.topLeft}`}></div>
         </div>
-        <div className='cardHeading my-4'>Efektívne online kampane</div>
+        <div className={`${styles.cardHeading} my-4`}>
+          Efektívne online kampane
+        </div>
         <div className='textThin mb-4'>
           Vytvoríme vám kampane s jediným cieľom. Predať. Oslovíme vašu cieľovú
           skupinu, ktorá má pre vás najväčšiu hodnotu, tak aby chcela
           spolupracovať práve s vami.
         </div>
       </div>
-      <div className='card'>
-        <div className='balls'>
-          <div className='bigBall'></div>
-          <div className='smallBall bottomRight'></div>
+      <div className={`${styles.card}`}>
+        <div className={`${styles.balls}`}>
+          <div className={`${styles.bigBall}`}></div>
+          <div className={`${styles.smallBall} ${ styles.bottomRight}`}></div>
         </div>
-        <div className='cardHeading my-4'>
+        <div className={`${styles.cardHeading} my-4`}>
           Unikátny copywritting a predajné vizuály
         </div>
         <div className='textThin mb-4'>
@@ -27,12 +30,12 @@ const ContentCards = () => {
           prezentáciu ako na webe, tak aj na sociálnych sieťach.
         </div>
       </div>
-      <div className='card'>
-        <div className='balls'>
-          <div className='bigBall'></div>
-          <div className='smallBall bottomLeft'></div>
+      <div className={`${styles.card}`}>
+        <div className={`${styles.balls}`}>
+          <div className={`${styles.bigBall}`}></div>
+          <div className={`${styles.smallBall} ${styles.bottomLeft}`}></div>
         </div>
-        <div className='cardHeading my-4'>
+        <div className={`${styles.cardHeading} my-4`}>
           Moderný dizajn s úlohou získavania klientov
         </div>
         <div className='textThin mb-4'>
