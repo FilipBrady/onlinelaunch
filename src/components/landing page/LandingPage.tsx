@@ -8,13 +8,13 @@ const LandingPage = () => {
         <span className='font-medium'>ONLINE marketingu pre </span> <br />
         <span className='font-bold'>elitné právnické firmy</span>
       </div>
-      <Divider />
+      <Divider color='white' />
       <div className='textThin'>
         Dedikované výsledky web stránok a výkonostných kampaní pre tých
         najlepších v právnickom odvetvií
       </div>
       <div>
-        <button className=' bg-pink inline-block px-8 py-4 my-8'>
+        <button className=' bg-pink px-8 py-4 my-8'>
           Získať ONLINE stratégiu
         </button>
       </div>
