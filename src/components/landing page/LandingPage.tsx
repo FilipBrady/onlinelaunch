@@ -1,21 +1,23 @@
-import Divider from "../divider/Divider";
+import Divider from '../divider/Divider';
 
 const LandingPage = () => {
   return (
-    <div className="w-11/12 mx-auto flex flex-col justify-between items-center">
-      <div className='text-2xl text-center mx-auto'>
+    <div className='container bg-[#1E2D3D] shadow-2xl'>
+      <div className='textHeading'>
         <span className='font-normal'>Garantované výsledky</span> <br />
         <span className='font-medium'>ONLINE marketingu pre </span> <br />
         <span className='font-bold'>elitné právnické firmy</span>
       </div>
-      <div className='text-base text-center mx-auto mt-10'>
+      <Divider />
+      <div className='textThin'>
         Dedikované výsledky web stránok a výkonostných kampaní pre tých
         najlepších v právnickom odvetvií
       </div>
       <div>
-        <button className=" bg-pink px-8 py-4 mt-10">Získať ONLINE stratégiu</button>
+        <button className=' bg-pink inline-block px-8 py-4 my-8'>
+          Získať ONLINE stratégiu
+        </button>
       </div>
-      <Divider />
     </div>
   );
 };

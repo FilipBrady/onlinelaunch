@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@100;200;400&display=swap');
+
 :root {
   --white-color: #FFFFFF;
   --black-color: #1E2D3D;
@@ -14,6 +16,7 @@
   --yellowwhite-color: #ECEAD7;
   --grey-color: #D9D9D9;
   --grey-darker-color: #E2E2E2;
+  --font-raleway: 'Raleway', sans-serif;
 
 }
 
@@ -30,11 +33,17 @@ body {
 
 .divider {
   width: 100%;
-  height: 50px;
-  margin: 50px 0;
+  height: fit-content;
+  margin: 35px 0;
   text-align: center;
   font-size: 28px;
   position: relative;
+  height: 1px;
+  background: repeating-linear-gradient(to right,
+      transparent,
+      transparent 16px,
+      white 0px,
+      white 26px);
 }
 
 .dividerIcon {
@@ -42,24 +51,22 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: var(--black-color);
+  width: 17%;
 }
 
-.divider::before {
-  content: '';
-  width: 100%;
-  border-top: dotted 3px #fff;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  z-index: 1;
+.container {
+  @apply w-full px-7 py-2 mx-auto flex flex-col items-center
 }
 
-.divider::after {
-  content: '';
-  width: 100%;
-  border-top: dotted 3px #fff;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  z-index: 1;
+.textThin {
+  /* font-family: 'Raleway' ,sans-serif; */
+  font-weight: 200;
+  @apply text-sm text-center
+}
+
+.textHeading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  @apply text-2xl text-center
 }
