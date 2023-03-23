@@ -28,7 +28,7 @@ html {
 
 body {
   background-color: var(--black-blue-darker-color);
-  color: var(--white-color);
+  /* color: var(--white-color); */
 }
 
 .divider {
@@ -46,12 +46,29 @@ body {
       white 26px);
 }
 
+.dividerBlack {
+  width: 100%;
+  height: fit-content;
+  margin: 35px 0;
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+  height: 1px;
+  background: repeating-linear-gradient(to right,
+      transparent,
+      transparent 16px,
+      black 0px,
+      black 26px);
+}
+
 .dividerIcon {
   position: relative;
   top: 50%;
   left: 50%;
+  width: 24px;
+  height: 28px;
   transform: translate(-50%, -50%);
-  background-color: var(--black-color);
+  /* background-color: initial; */
   width: 17%;
 }
 
@@ -61,12 +78,174 @@ body {
 
 .textThin {
   /* font-family: 'Raleway' ,sans-serif; */
-  font-weight: 200;
+  font-weight: 100;
+  color: var(--white-color);
   @apply text-sm text-center
 }
-
+.textThinBlack {
+  font-weight: 100;
+  color: var(--black-color);
+  @apply text-sm text-center
+}
 .textHeading {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
+  color: var(--white-color);
   @apply text-2xl text-center
+}
+.textHeadingBlack {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  color: var(--black-color);
+  @apply text-2xl text-center
+}
+.card {
+  background-color: var(--black-blue-darker-color);
+  color: var(--white-color);
+  @apply text-center px-6 py-8 w-11/12 mx-auto my-3
+}
+
+.cardHeading {
+  @apply text-xl text-center
+}
+
+.balls {
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.bigBall {
+  position: relative;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(37px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* border-ra: 500px; */
+  transform: rotate(-180deg);
+}
+
+.smallBall {
+  position: absolute;
+  z-index: 0;
+  width: 33.55px;
+  height: 34.41px;
+  background: #ECEAD7;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.bottomRight {
+  left: 68%;
+  top: 57%;
+}
+
+.bottomLeft {
+  left: -10%;
+  top: 57%;
+}
+
+.topLeft {
+  left: -10%;
+  top: 0%;
+}
+
+.topRight {
+  left: 68%;
+  top: 0;
+}
+
+.comparisonCard {
+  background-color: var(--black-color);
+  box-shadow: 0px 17px 18px rgba(0, 0, 0, 0.25);
+  border: 0px;
+  outline: 1px solid white;
+  outline-offset: -7px;
+  @apply px-11 py-14 text-2xl font-thin
+}
+
+.comparisonCard:first-child {
+  font-family: 'Playfair Display', serif;
+}
+
+.comparisonListWrong,
+.comparisonListGood {
+  @apply text-left mt-4
+}
+
+.comparisonPoint {
+  @apply text-left text-sm font-thin
+}
+
+.comparisonListWrong .comparisonPoint {
+  list-style: url("../images/listWrong.svg");
+}
+
+.comparisonListGood .comparisonPoint {
+  list-style: url("../images/listCheck.svg");
+}
+
+.iconTop {
+  background: url("../images/star.svg");
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: -35px;
+  left: 0;
+  /* transform: translate(0, -50%); */
+  z-index: 0;
+}
+
+.badgeIcon {
+  background: url("../images//badge.svg");
+  width: 24px;
+  height: 28px;
+  z-index: 10;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.forWhoCard {
+  @apply p-2 text-blue-darker
+}
+
+.whoCardBalls {
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  @apply my-4
+}
+
+.whoCardBigBall {
+  position: relative;
+  z-index: 10;
+  width: 37px;
+  height: 37px;
+  background-color: white;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(37px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* border-ra: 500px; */
+  transform: rotate(-180deg);
+}
+
+.whoCardSmallBall {
+  position: absolute;
+  z-index: 0;
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border-radius: 100%;
+  z-index: 0;
 }
