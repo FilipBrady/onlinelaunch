@@ -1,9 +1,23 @@
 .card {
   background-color: var(--black-blue-darker-color);
   color: var(--white-color);
+  transition: transform .5s ease-in-out;
+  transform: translateY(0%) translateX(0) scale(1) rotate(0);
   @apply text-center px-6 py-8 w-11/12 mx-auto my-3
 }
-
+.cardVisible {
+  animation: slideInFromRight 2s;
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 .cardHeading {
   @apply text-xl text-center
 }

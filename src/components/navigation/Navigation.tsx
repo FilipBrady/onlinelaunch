@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import Divider from '../divider/Divider';
 import styles from './Navigation.module.css';
-const Navigation = () => {
+type Props = {
+  handleClickingBtn: () => void;
+};
+const Navigation = ({ handleClickingBtn }: Props) => {
   const [isNavClicked, setIsNavClicked] = useState(false);
   return (
     <div
-      className={`${styles.navContainer} bg-[#1E2D3D] text-white flex flex-col w-full px-7 py-3`}
+      className={`${styles.navContainer} sticky top-0 left-0 z-50 bg-[#1E2D3D] text-white flex flex-col w-full px-7 py-3`}
     >
       <div className='flex flex-row justify-between z-20 relative'>
         <div>
@@ -15,22 +18,35 @@ const Navigation = () => {
           className={`${styles.burgerNavigation}`}
           onClick={() => setIsNavClicked(!isNavClicked)}
         >
-          <div className={`${styles.line} ${styles.line1}`}></div>
-          <div className={`${styles.line} ${styles.line2}`}></div>
-          <div className={`${styles.line} ${styles.line3}`}></div>
-          <input
-            className={`${styles.checkbox}`}
-            type='checkbox'
-            name=''
-            id=''
-          />
+          <div
+            className={
+              isNavClicked
+                ? `${styles.lineActive} ${styles.line1}`
+                : `${styles.line} ${styles.line1}`
+            }
+          ></div>
+          <div
+            className={
+              isNavClicked
+                ? `${styles.lineActive} ${styles.line2}`
+                : `${styles.line} ${styles.line2}`
+            }
+          ></div>
+          <div
+            className={
+              isNavClicked
+                ? `${styles.lineActive} ${styles.line3}`
+                : `${styles.line} ${styles.line3}`
+            }
+          ></div>
         </div>
       </div>
       <div
         className={
-          isNavClicked ? ` ${styles.menuItems} pt-14` : `${styles.none}`
+          isNavClicked
+            ? `${styles.menuItems} pt-14`
+            : `${styles.menuItemsNoactive} pt-14`
         }
-        style={isNavClicked ? {} : { display: 'none' }}
       >
         <div className={`${styles.linksList}`}>
           <li className={`${styles.link}`}>
@@ -48,7 +64,15 @@ const Navigation = () => {
         </div>
         <div className='mx-auto'>
           <Divider color='white' />
-          <button className='button'>ZÍSKAŤ ONLINE STRATÉGIU</button>
+          <button
+            className='button'
+            onClick={() => {
+              handleClickingBtn();
+              setIsNavClicked(false);
+            }}
+          >
+            ZÍSKAŤ ONLINE STRATÉGIU
+          </button>
         </div>
       </div>
     </div>

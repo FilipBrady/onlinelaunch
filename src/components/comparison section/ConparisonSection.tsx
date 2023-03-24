@@ -4,7 +4,7 @@ import styles from './Comparison.module.css';
 const ConparisonSection = () => {
   return (
     <div className='container'>
-      <div className="textHeading">
+      <div className='textHeading'>
         Online kampane ako kľúč k vášmu online úspechu
       </div>
       <Divider color='white' />
@@ -13,6 +13,7 @@ const ConparisonSection = () => {
         0.000000002%, ktoré zarabajú
       </div>
       <div className={`${styles.card} my-3`}>
+        <div className={`${styles.topCorner}`}></div>
         <div className='text-white'>Bez kampaní</div>
         <ul className={`${styles.list} ${styles.wrong}`}>
           <li className={`${styles.point}`}>
@@ -28,8 +29,10 @@ const ConparisonSection = () => {
             <div>Smútok</div>
           </li>
         </ul>
+        <div className={`${styles.bottomCorner}`}></div>
       </div>
       <div className={`${styles.card} mb-7`}>
+        <div className={`${styles.topCorner}`}></div>
         <div className='text-white'>S kampaňami</div>
         <ul className={`${styles.list} ${styles.good}`}>
           <li className={`${styles.point}`}>
@@ -45,6 +48,7 @@ const ConparisonSection = () => {
             <div>Opak smútku</div>
           </li>
         </ul>
+        <div className={`${styles.bottomCorner}`}></div>
       </div>
     </div>
   );
