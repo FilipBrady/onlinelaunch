@@ -1,6 +1,9 @@
 import badge from '../../images/badge.svg';
 import styles from "./FreeConsultation.module.css"
-const FreeConsultation = () => {
+type Props = {
+  handleClickingBtn: () => void;
+}
+const FreeConsultation = ({handleClickingBtn}: Props) => {
   return (
     <div className='container bg-[#1E2D3D]'>
       <div className={`${styles.iconTop}`}>
@@ -10,7 +13,7 @@ const FreeConsultation = () => {
       <div className='textHeading'>
         Získajte bezplatnú konzultáciu určenú právnické kancelárie
       </div>
-      <button className='button'>Získať konzultáciu zadarmo</button>
+      <button className='button' onClick={handleClickingBtn}>Získať konzultáciu zadarmo</button>
     </div>
   );
 };

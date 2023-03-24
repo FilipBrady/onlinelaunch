@@ -1,6 +1,9 @@
 import Divider from '../divider/Divider';
-
-const LandingPage = () => {
+type Props = {
+  handleClickingBtn: () => void;
+}
+const LandingPage = ({ handleClickingBtn }: Props) => {
+  
   return (
     <div className='container bg-[#1E2D3D] shadow-2xl mt-0'>
       <div className='textHeading'>
@@ -14,7 +17,7 @@ const LandingPage = () => {
         najlepších v právnickom odvetvií
       </div>
       <div>
-        <button className='button'>
+        <button className='button' onClick={handleClickingBtn}>
           Získať ONLINE stratégiu
         </button>
       </div>

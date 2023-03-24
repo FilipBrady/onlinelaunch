@@ -1,10 +1,11 @@
 import Divider from '../divider/Divider';
 
 const ContactSection = () => {
+  const handleEv = (ev: any) => {
+    console.log(ev.pageY);
+  };
   return (
-    <div
-      className='container'
-    >
+    <div className='container' onClick={ev => handleEv(ev)}>
       <div className='textThin mb-7'>Máte ďalšie otázky?</div>
       <div className='textHeading'>
         <span className='font-normal'>Napíšte nám ešte dnes!</span> <br />
@@ -16,9 +17,7 @@ const ContactSection = () => {
         potenciálnych zákazníkov a kvalitnú návštevnosť webových stránok.
       </div>
       <div>
-        <button className='button'>
-          Opýtajte sa ešte dnes
-        </button>
+        <button className='button'>Opýtajte sa ešte dnes</button>
       </div>
     </div>
   );

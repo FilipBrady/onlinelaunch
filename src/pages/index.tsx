@@ -12,22 +12,36 @@ import OnlineMarketing from '@/components/online marketing/OnlineMarketing';
 // import '../styles/globals.css'
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
+import { useEffect, useRef, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
-
 export default function Home() {
+  const [contactSectioY, setContentSectionY] = useState(0);
+  const contactSectionRef = useRef(null);
+  useEffect(() => {
+    if (contactSectionRef.current) {
+      const distanceFromTop =
+        contactSectionRef.current.getBoundingClientRect().top;
+      setContentSectionY(distanceFromTop);
+    }
+  }, []);
+  const handleClickingBtn = () => {
+    window.scrollTo({top: contactSectioY, left: 0, behavior: 'smooth' });
+  }
   return (
     <div>
-      <Navigation />
-      <LandingPage />
+      <Navigation  handleClickingBtn={handleClickingBtn} />
+      <LandingPage handleClickingBtn={handleClickingBtn} />
       <OnlineMarketing />
       <ContentCards />
       <ConparisonSection />
-      <FreeConsultation />
+      <FreeConsultation  handleClickingBtn={handleClickingBtn}  />
       <ForWho />
       <FounderSection />
-      <Consultation />
-      <ContactSection />
+      <Consultation  handleClickingBtn={handleClickingBtn}  />
+      <div ref={contactSectionRef}>
+        <ContactSection />
+      </div>
       <FooterSection />
     </div>
   );
