@@ -1,3 +1,4 @@
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import styles from './Comparison.module.css';
 type Props = {
   card: {
@@ -8,8 +9,15 @@ type Props = {
   };
 };
 const ComparisonCard = ({ card }: Props) => {
+  const [myRef, intersectionRatio] = useIntersectionObserver({});
+  const isVisible = intersectionRatio > 0;
   return (
-    <div className={`${styles.card} my-3`}>
+    <div
+      ref={myRef}
+      className={`${styles.card} ${
+        isVisible ? `${styles.cardVisible} ${styles[card.variant]}` : ''
+      } my-3`}
+    >
       <div className={`${styles.topCorner}`}></div>
       <div className='text-white'>{card.title}</div>
       <ul
