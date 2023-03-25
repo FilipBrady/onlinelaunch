@@ -3,8 +3,8 @@ import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { useRef, useState } from 'react';
 
 type Props = {
-  cardContent: { id: number; title: string; description: string; }
-}
+  cardContent: { id: number; title: string; description: string };
+};
 const Card = ({ cardContent }: Props) => {
   const [myRef, intersectionRatio] = useIntersectionObserver({});
   const isVisible = intersectionRatio > 0;
@@ -12,6 +12,7 @@ const Card = ({ cardContent }: Props) => {
   return (
     <div
       ref={myRef}
+      id={`${cardContent.id}`}
       className={`${styles.card} ${isVisible ? styles.cardVisible : ''}`}
     >
       <div className={`${styles.balls}`}>

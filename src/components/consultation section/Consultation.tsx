@@ -2,12 +2,14 @@ import styles from './Consultation.module.css';
 import List from './List';
 type Props = {
   handleClickingBtn: () => void;
-}
+};
 const Consultation = ({ handleClickingBtn }: Props) => {
   return (
     <div className={`${styles.container} bg-[#1E2D3D]`}>
       <div className={`${styles.heading} my-3`}>
-        Získajte konzultáciu pre vás,
+        Získajte{' '}
+        <span className='relative z-10 pinkTextDecoration'> konzultáciu </span>
+        pre vás,
       </div>
       <div className={`${styles.textThin} mt-3`}>
         vďaka ktorej zistíte potenciál online sveta.
@@ -25,7 +27,10 @@ const Consultation = ({ handleClickingBtn }: Props) => {
 
       <List />
 
-      <button className='bg-pink px-8 py-4 my-8 text-white' onClick={handleClickingBtn}>
+      <button
+        className='bg-pink px-8 py-4 my-8 text-white'
+        onClick={handleClickingBtn}
+      >
         Získať konzultáciu zadarmo
       </button>
     </div>
