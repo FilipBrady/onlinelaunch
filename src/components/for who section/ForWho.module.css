@@ -54,3 +54,16 @@
   left: 68%;
   top: 0;
 }
+
+.card.topLeft {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.card.bottomLeft {
+  border-top: 1px solid black;
+}
+
+.card.topRight {
+  border-right: 1px solid black;
+}

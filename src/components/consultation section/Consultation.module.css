@@ -21,7 +21,7 @@
 }
 
 .listPoint {
-  @apply my-3 flex flex-row flex-nowrap justify-between
+  @apply my-3 flex flex-row flex-nowrap text-left
 }
 
 .ball {

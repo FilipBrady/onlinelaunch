@@ -1,55 +1,47 @@
+import { useState } from 'react';
 import Divider from '../divider/Divider';
 import styles from './Comparison.module.css';
+import ComparisonCard from './ComparisonCard';
 
 const ConparisonSection = () => {
+  const [cardContent, setCardContent] = useState([
+    {
+      id: 1,
+      title: 'Bez kampaní',
+      points: [
+        { id: 1, text: 'Nestabilny tok klientov' },
+        { id: 2, text: 'Chaotické získavanie klientov' },
+        { id: 3, text: 'Slabé povedomie o značke' },
+        { id: 4, text: 'Smútok' },
+      ],
+      variant: 'wrong',
+    },
+    {
+      id: 2,
+      title: 'S kampaňami',
+      points: [
+        { id: 1, text: 'Stabilný tok klientov' },
+        { id: 2, text: 'Prehladné získavanie klientov' },
+        { id: 3, text: 'Silné povedomie o značke' },
+        { id: 4, text: 'Opak smútku' },
+      ],
+      variant: 'good',
+    },
+  ]);
   return (
     <div className='container'>
       <div className='textHeading'>
-        Online kampane ako kľúč k vášmu online úspechu
+        Online kampane ako kľúč k vášmu{' '}
+        <span className='relative pinkTextDecoration'> online úspechu</span>
       </div>
       <Divider color='white' />
       <div className='textThin'>
         Je to rozdiel medzi 1,929,999,999 stránkami ktoré nezarábajú peniaze a
         0.000000002%, ktoré zarabajú
       </div>
-      <div className={`${styles.card} my-3`}>
-        <div className={`${styles.topCorner}`}></div>
-        <div className='text-white'>Bez kampaní</div>
-        <ul className={`${styles.list} ${styles.wrong}`}>
-          <li className={`${styles.point}`}>
-            <div>Nestabilny tok klientov</div>
-          </li>
-          <li className={`${styles.point}`}>
-            <div>Chaotické získavanie klientov</div>
-          </li>
-          <li className={`${styles.point}`}>
-            <div>Slabé povedomie o značke</div>
-          </li>
-          <li className={`${styles.point}`}>
-            <div>Smútok</div>
-          </li>
-        </ul>
-        <div className={`${styles.bottomCorner}`}></div>
-      </div>
-      <div className={`${styles.card} mb-7`}>
-        <div className={`${styles.topCorner}`}></div>
-        <div className='text-white'>S kampaňami</div>
-        <ul className={`${styles.list} ${styles.good}`}>
-          <li className={`${styles.point}`}>
-            <div>Stabilný tok klientov</div>
-          </li>
-          <li className={`${styles.point}`}>
-            <div>Prehladné získavanie klientov</div>
-          </li>
-          <li className={`${styles.point}`}>
-            <div>Silné povedomie </div>
-          </li>
-          <li className={`${styles.point}`}>
-            <div>Opak smútku</div>
-          </li>
-        </ul>
-        <div className={`${styles.bottomCorner}`}></div>
-      </div>
+      {cardContent.map(card => (
+        <ComparisonCard key={card.id} card={card} />
+      ))}
     </div>
   );
 };

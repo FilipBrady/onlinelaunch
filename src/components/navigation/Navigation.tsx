@@ -50,15 +50,21 @@ const Navigation = ({ handleClickingBtn }: Props) => {
       >
         <div className={`${styles.linksList}`}>
           <li className={`${styles.link}`}>
-            <a href='#'>Home</a>
+            <a href='#' className='uppercase'>
+              Online marketing
+            </a>
             <div className={`${styles.divider}`}></div>
           </li>
           <li className={`${styles.link}`}>
-            <a href='#'>about</a>
+            <a href='#' className='uppercase'>
+              O nás
+            </a>
             <div className={`${styles.divider}`}></div>
           </li>
           <li className={`${styles.link}`}>
-            <a href='#'>blogs</a>
+            <a href='#' className='uppercase'>
+              bezplatné konzultácie
+            </a>
             <div className={`${styles.divider}`}></div>
           </li>
         </div>

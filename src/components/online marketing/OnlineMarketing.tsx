@@ -4,7 +4,9 @@ import computerPhoto from '../../images/computer.png';
 const OnlineMarketing = () => {
   return (
     <div className='container'>
-      <div className='textHeading my-5'>Prečo ONLINE Marketing?</div>
+      <div className='textHeading my-5'>
+        Prečo <span className='relative pinkTextDecoration'>ONLINE Marketing?</span>
+      </div>
       <div className='textThin my-4'>
         Narovinu - stránka bez klientov je ako postaviť si pobočku v strede
         púšte bez žiadnej cesty smerujúcej k nej.

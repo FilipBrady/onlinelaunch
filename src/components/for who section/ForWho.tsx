@@ -1,46 +1,46 @@
+import { useState } from 'react';
 import Divider from '../divider/Divider';
 import styles from './ForWho.module.css';
+import ForWhoCard from './ForWhoCard';
 
 const ForWho = () => {
+  const [cardContent, setCardContent] = useState([
+    {
+      id: 1,
+      text: 'Pre začínajúcu právnicku kanceláriu',
+      ballPosition: 'topRight',
+    },
+    {
+      id: 2,
+      text: 'Pre právnicku kanceláriu bez výsledkov online',
+      ballPosition: 'bottomRight',
+    },
+    {
+      id: 3,
+      text: 'Pre právnicke kancelárie bez online stratégie',
+      ballPosition: 'topLeft',
+    },
+    {
+      id: 4,
+      text: 'Pre právnikov, ktorí chcú rásť',
+      ballPosition: 'bottomLeft',
+    },
+  ]);
   return (
     <div className='container bg-[#ECEAD7] text-black'>
-      <div className='textHeadingBlack'>Pre koho je Online Launch určený?</div>
+      <div className='textHeadingBlack'>
+        Pre koho je{' '}
+        <span className='relative z-10 pinkTextDecoration font-bold'>
+          {' '}
+          Online Launch{' '}
+        </span>{' '}
+        určený?
+      </div>
       <Divider color='black' />
       <div className='grid grid-cols-2 grid-rows-2 pt-2 pb-4'>
-        <div className={`${styles.card} border-r-[.5px]`}>
-          <div className={`${styles.ball}`}>
-            <div className={`${styles.bigBall}`}></div>
-            <div className={`${styles.smallBall} ${styles.topRight}`}></div>
-          </div>
-          <div className='textThinBlack'>
-            Pre začínajúcu právnicku kanceláriu
-          </div>
-        </div>
-        <div className={`${styles.card}`}>
-          <div className={`${styles.ball}`}>
-            <div className={`${styles.bigBall}`}></div>
-            <div className={`${styles.smallBall} ${styles.bottomRight}`}></div>
-          </div>
-          <div className='textThinBlack'>
-            Pre právnicku kanceláriu bez výsledkov online
-          </div>
-        </div>
-        <div className={`${styles.card} border-r-[.5px] border-t-[.5px]`}>
-          <div className={`${styles.ball}`}>
-            <div className={`${styles.bigBall}`}></div>
-            <div className={`${styles.smallBall} ${styles.bottomLeft}`}></div>
-          </div>
-          <div className='textThinBlack'>
-            Pre právnicke kancelárie bez online stratégie
-          </div>
-        </div>
-        <div className={`${styles.card} border-t-[.5px]`}>
-          <div className={`${styles.ball}`}>
-            <div className={`${styles.bigBall}`}></div>
-            <div className={`${styles.smallBall} ${styles.topLeft}`}></div>
-          </div>
-          <div className='textThinBlack'>Pre právnikov, ktorí chcú rásť</div>
-        </div>
+        {cardContent.map(card => (
+          <ForWhoCard key={card.id} card={card} />
+        ))}
       </div>
     </div>
   );
