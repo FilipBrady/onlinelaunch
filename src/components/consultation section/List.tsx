@@ -1,65 +1,34 @@
-import styles from './Consultation.module.css';
+import { useState } from 'react';
+import ListPoint from './ListPoint';
 
 const List = () => {
+  const [listPoints, setListPoints] = useState([
+    {
+      id: 1,
+      text: 'Kancelárie, ktoré chcú previesť svoje súčasné webové stránky na vysokokvalitný a online marketing.',
+    },
+    {
+      id: 2,
+      text: 'Kancelárie, ktoré chcú preniesť svoje offline podnikanie do online sveta.',
+    },
+    {
+      id: 3,
+      text: 'Kancelárie ktoré chcú porozumieť tomu ako dokážu zlepšiť ich výsledky v online priestore pomocou kampaní.',
+    },
+    {
+      id: 4,
+      text: 'Kancelárie, ktoré hľadajú príležitosť ako maximalizovať množstvo a hodnotu dopytov.',
+    },
+    {
+      id: 5,
+      text: 'Kancelárie, ktoré hľadajú spoľahlivú agentúru,vďaka ktorej bude ich spoločnosť prioritou.',
+    },
+  ]);
   return (
     <ul>
-      <li className={`${styles.listPoint}`}>
-        <div className={`${styles.ball}`}>
-          <div className={`${styles.bigBall}`}></div>
-          <div className={`${styles.smallBall} ${styles.topRight}`}></div>
-        </div>
-        <div className={`${styles.textThin}`}>
-          Kancelárie, ktoré chcú previesť svoje súčasné webové stránky na{' '}
-          <span className={`${styles.textStrong}`}>
-            vysokokvalitný a efektívny{' '}
-          </span>
-          online marketing.
-        </div>
-      </li>
-      <li className={`${styles.listPoint}`}>
-        <div className={`${styles.ball}`}>
-          <div className={`${styles.bigBall}`}></div>
-          <div className={`${styles.smallBall} ${styles.topRight}`}></div>
-        </div>
-        <div className={`${styles.textThin}`}>
-          Kancelárie, ktoré chcú preniesť svoje offline podnikanie do
-          <span className={`${styles.textStrong}`}> online sveta.</span>
-        </div>
-      </li>
-      <li className={`${styles.listPoint}`}>
-        <div className={`${styles.ball}`}>
-          <div className={`${styles.bigBall}`}></div>
-          <div className={`${styles.smallBall} ${styles.topRight}`}></div>
-        </div>
-        <div className={`${styles.textThin}`}>
-          Kancelárie ktoré chcú porozumieť tomu ako dokážu zlepšiť
-          <span className={`${styles.textStrong}`}> ich výsledky </span>v online
-          priestore pomocou kampaní.
-        </div>
-      </li>
-      <li className={`${styles.listPoint}`}>
-        <div className={`${styles.ball}`}>
-          <div className={`${styles.bigBall}`}></div>
-          <div className={`${styles.smallBall} ${styles.topRight}`}></div>
-        </div>
-        <div className={`${styles.textThin}`}>
-          Kancelárie, ktoré hľadajú príležitosť ako maximalizovať{' '}
-          <span className={`${styles.textStrong}`}>
-            množstvo a hodnotu dopytov.
-          </span>
-        </div>
-      </li>
-      <li className={`${styles.listPoint}`}>
-        <div className={`${styles.ball}`}>
-          <div className={`${styles.bigBall}`}></div>
-          <div className={`${styles.smallBall} ${styles.topRight}`}></div>
-        </div>
-        <div className={`${styles.textThin}`}>
-          Kancelárie, ktoré hľadajú{' '}
-          <span className={`${styles.textStrong}`}> spoľahlivú agentúru,</span>
-          vďaka ktorej bude ich spoločnosť prioritou.
-        </div>
-      </li>
+      {listPoints.map(point => (
+        <ListPoint key={point.id} point={point} />
+      ))}
     </ul>
   );
 };

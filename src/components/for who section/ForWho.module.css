@@ -1,5 +1,5 @@
 .card {
-  @apply p-2 text-blue-darker
+  @apply p-2 text-blue-darker flex flex-col justify-center
 }
 
 .ball {
@@ -10,9 +10,30 @@
   @apply my-4
 }
 
+.cardVisible {
+  animation: popUp 1s;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(1, 1);
+  }
+
+  50% {
+    opacity: .5;
+    transform: scale(.8, .8);
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
 .bigBall {
   position: relative;
-  z-index: 10;
+  z-index: 100;
   width: 37px;
   height: 37px;
   background-color: white;

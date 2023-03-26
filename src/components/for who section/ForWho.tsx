@@ -26,21 +26,24 @@ const ForWho = () => {
       ballPosition: 'bottomLeft',
     },
   ]);
+  
   return (
-    <div className='container bg-[#ECEAD7] text-black'>
-      <div className='textHeadingBlack'>
-        Pre koho je{' '}
-        <span className='relative z-10 pinkTextDecoration font-bold'>
-          {' '}
-          Online Launch{' '}
-        </span>{' '}
-        určený?
-      </div>
-      <Divider color='black' />
-      <div className='grid grid-cols-2 grid-rows-2 pt-2 pb-4'>
-        {cardContent.map(card => (
-          <ForWhoCard key={card.id} card={card} />
-        ))}
+    <div className='w-full bg-[#ECEAD7] text-black'>
+      <div className='container'>
+        <div className='textHeadingBlack'>
+          Pre koho je{' '}
+          <span className='relative z-10 pinkTextDecoration font-bold'>
+            {' '}
+            Online Launch{' '}
+          </span>{' '}
+          určený?
+        </div>
+        <Divider color='black' />
+        <div className='grid grid-cols-2 grid-rows-2 pt-2 pb-4'>
+          {cardContent.map(card => (
+            <ForWhoCard key={card.id} card={card} />
+          ))}
+        </div>
       </div>
     </div>
   );

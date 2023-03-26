@@ -1,0 +1,60 @@
+.textVisible {
+  animation: slideInFromLeft 1s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.textVisible.visibleDelay {
+  animation: slideInFromLeft 2s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.buttonVisible {
+  animation: popUp 2s;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+    transform: scale(1, 1);
+  }
+
+  85% {
+    opacity: .5;
+    transform: scale(1.1, 1.1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
