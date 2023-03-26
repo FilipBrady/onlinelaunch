@@ -1,0 +1,20 @@
+.iconTop {
+  background: url("../../images/star.svg");
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: -35px;
+  left: 0;
+  z-index: 0;
+}
+
+.badgeIcon {
+  background: url("../../images//badge.svg");
+  width: 24px;
+  height: 28px;
+  z-index: 10;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}

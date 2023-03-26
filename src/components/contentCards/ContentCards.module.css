@@ -1,0 +1,92 @@
+.card {
+  background-color: var(--black-blue-darker-color);
+  color: var(--white-color);
+  transition: transform .5s ease-in-out;
+  transform: translateY(0%) translateX(0) scale(1) rotate(0);
+  @apply text-center px-6 py-8 w-11/12 mx-auto my-3
+}
+
+.cardVisible {
+  animation: slideInFromRight 2s;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.cardHeading {
+  @apply text-xl text-center relative
+}
+
+.cardHeading::after {
+  content: " ";
+  width: 75%;
+  height: 5px;
+  background-color: var(--pink-color);
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  border-radius: 25px;
+  opacity: .8;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+
+.balls {
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.bigBall {
+  position: relative;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(37px);
+
+  transform: rotate(-180deg);
+}
+
+.smallBall {
+  position: absolute;
+  z-index: 0;
+  width: 33.55px;
+  height: 34.41px;
+  background: #ECEAD7;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.bottomRight {
+  left: 68%;
+  top: 57%;
+}
+
+.bottomLeft {
+  left: -10%;
+  top: 57%;
+}
+
+.topLeft {
+  left: -10%;
+  top: 0%;
+}
+
+.topRight {
+  left: 68%;
+  top: 0;
+}

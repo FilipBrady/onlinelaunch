@@ -6,17 +6,19 @@ function useIntersectionObserver(options: any) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const currentRef = ref.current;
+
     const observer = new IntersectionObserver(([entry]) => {
       setIntersectionRatio(entry.intersectionRatio);
     }, options);
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [options]);
@@ -25,7 +27,7 @@ function useIntersectionObserver(options: any) {
     const hasBeenVisible = localStorage.getItem(
       (ref.current as HTMLDivElement | null)?.id || ''
     );
-    if (hasBeenVisible === "true") {
+    if (hasBeenVisible === 'true') {
       setIsVisible(false);
     }
   }, []);

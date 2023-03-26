@@ -1,4 +1,3 @@
-import badge from '../../images/badge.svg';
 import styles from './Divider.module.css';
 type dividerProps = {
   color: 'white' | 'black';
