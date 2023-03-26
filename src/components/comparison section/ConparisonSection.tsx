@@ -29,19 +29,21 @@ const ConparisonSection = () => {
     },
   ]);
   return (
-    <div className='container'>
-      <div className='textHeading'>
-        Online kampane ako kľúč k vášmu{' '}
-        <span className='relative pinkTextDecoration'> online úspechu</span>
+    <div className='w-full'>
+      <div className='container'>
+        <div className='textHeading'>
+          Online kampane ako kľúč k vášmu{' '}
+          <span className='relative pinkTextDecoration'> online úspechu</span>
+        </div>
+        <Divider color='white' />
+        <div className='textThin'>
+          Je to rozdiel medzi 1,929,999,999 stránkami ktoré nezarábajú peniaze a
+          0.000000002%, ktoré zarabajú
+        </div>
+        {cardContent.map(card => (
+          <ComparisonCard key={card.id} card={card} />
+        ))}
       </div>
-      <Divider color='white' />
-      <div className='textThin'>
-        Je to rozdiel medzi 1,929,999,999 stránkami ktoré nezarábajú peniaze a
-        0.000000002%, ktoré zarabajú
-      </div>
-      {cardContent.map(card => (
-        <ComparisonCard key={card.id} card={card} />
-      ))}
     </div>
   );
 };

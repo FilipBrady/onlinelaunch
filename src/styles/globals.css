@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-  @apply w-full px-7 py-4 mx-auto flex flex-col items-center mb-3
+  @apply w-full px-7 py-4 mx-auto flex flex-col items-center
 }
 
 /** THIN TEXT */
@@ -42,7 +42,7 @@ body {
 .textThinBlack {
   font-weight: 100;
   color: var(--black-color);
-  @apply text-sm text-center
+  @apply text-sm text-center font-normal
 }
 
 /** HEADING */
@@ -57,7 +57,32 @@ body {
 }
 
 .button {
-  @apply bg-pink w-full px-8 py-4 my-8 text-white
+  @apply bg-pink w-full px-7 py-4 my-8 text-white
+}
+
+.buttonVisible {
+  animation: popUp 2s;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+    transform: scale(1, 1);
+  }
+
+  85% {
+    opacity: .5;
+    transform: scale(1.1, 1.1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
 }
 
 .none {
@@ -76,4 +101,76 @@ body {
   opacity: .8;
   transform: translateX(-50%);
   z-index: -1;
+}
+
+.visibleLeft {
+  animation: slideInFromLeft 1s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.visibleLeft.visibleDelay {
+  animation: slideInFromLeft 2s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.visibleRight {
+  animation: slideInFromLeft 1s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.visibleRight.visibleDelay {
+  animation: slideInFromLeft 2s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }

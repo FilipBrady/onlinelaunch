@@ -4,8 +4,45 @@
   border: 0px;
   outline: 1px solid white;
   outline-offset: -7px;
+
+  transition: transform .5s ease-in-out;
+  transform: translateY(0%) translateX(0) scale(1) rotate(0);
+
   @apply px-11 py-14 text-2xl font-thin relative
 }
+
+.cardVisible.wrong {
+  animation: slideInFromLeft 2s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.cardVisible.good {
+  animation: slideInFromRight 2s;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 
 .card:first-child {
   font-family: 'Playfair Display', serif;

@@ -5,7 +5,8 @@ type Props = {
 };
 const FreeConsultation = ({ handleClickingBtn }: Props) => {
   return (
-    <div className='container bg-[#1E2D3D]'>
+    <div className='w-full bg-[#1E2D3D]'>
+      <div className='container'>
       <div className={`${styles.iconTop}`}>
         <div className={`${styles.badgeIcon}`}></div>
       </div>
@@ -20,7 +21,7 @@ const FreeConsultation = ({ handleClickingBtn }: Props) => {
       </div>
       <button className='button' onClick={handleClickingBtn}>
         Získať konzultáciu zadarmo
-      </button>
+      </button></div>
     </div>
   );
 };

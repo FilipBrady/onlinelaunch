@@ -13,6 +13,18 @@
       white 26px);
 }
 
+/* .divider::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+  content: " ";
+  height: 1px;
+  width: 44%;
+  border-top: 6px dashed white;
+  background: red repeat-x;
+} */
+
 .dividerBlack {
   width: 100%;
   height: fit-content;

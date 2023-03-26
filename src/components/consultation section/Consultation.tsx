@@ -1,9 +1,13 @@
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import styles from './Consultation.module.css';
 import List from './List';
 type Props = {
   handleClickingBtn: () => void;
 };
 const Consultation = ({ handleClickingBtn }: Props) => {
+  const [myRef, intersectionRatio] = useIntersectionObserver({});
+  const isVisible = intersectionRatio;
+
   return (
     <div className={`${styles.container} bg-[#1E2D3D]`}>
       <div className={`${styles.heading} my-3`}>
@@ -21,14 +25,15 @@ const Consultation = ({ handleClickingBtn }: Props) => {
         kancelária začala generovať konzistentné a spoľahlivé výsledky s online
         kampanami
       </div>
-      <div className={`${styles.smallHeading} my-3`}>
+      <div ref={myRef} className={`${styles.smallHeading} my-3`}>
         Táto konzultácia je dokonalá pre:
       </div>
 
       <List />
 
       <button
-        className='bg-pink px-8 py-4 my-8 text-white'
+        ref={myRef}
+        className={isVisible ? 'button buttonVisible' : 'button'}
         onClick={handleClickingBtn}
       >
         Získať konzultáciu zadarmo

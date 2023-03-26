@@ -28,6 +28,33 @@
   @apply mt-1 mr-4 relative w-fit
 }
 
+.listPoint.pointVisible{
+  animation: slideInFromLeft 1s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    /* transform: rotate(80deg); */
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  90% {
+    transform: translateX(5%);
+    /* transform: rotate(20deg); */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    /* transform: rotate(0deg); */
+    opacity: 1;
+  }
+}
+
+
 .bigBall {
   position: relative;
   z-index: 10;
