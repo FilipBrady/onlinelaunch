@@ -8,7 +8,6 @@
   --white-color: #FFFFFF;
   --black-color: #1E2D3D;
   --black-blue-dark-color: #192531;
-  /* --black-blue-darker-color: #FFFFFF03; */
   --black-blue-darker-color: #192633;
   --green-color: #0BD89F;
   --red-color: #D94741;
@@ -21,11 +20,7 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--black-blue-darker-color);
-  /* color: var(--white-color); */
-  overflow-x: hidden;
+  @apply w-screen h-screen overflow-x-hidden bg-[var(--black-blue-darker-color)]
 }
 
 .container {
@@ -34,15 +29,11 @@ body {
 
 /** THIN TEXT */
 .textThin {
-  font-weight: 100;
-  color: var(--white-color);
-  @apply text-sm text-center
+  @apply text-sm text-center font-thin text-[var(--white-color)]
 }
 
 .textThinBlack {
-  font-weight: 100;
-  color: var(--black-color);
-  @apply text-sm text-center font-normal
+  @apply text-sm text-center font-normal text-[var(--black-color)]
 }
 
 /** HEADING */
@@ -58,6 +49,10 @@ body {
 
 .button {
   @apply bg-pink w-full px-7 py-4 my-8 text-white
+}
+
+.founderImage {
+  box-shadow: 7px 6px 15px 1px rgb(255 255 255 / 39%);
 }
 
 .buttonVisible {
@@ -91,16 +86,7 @@ body {
 
 .pinkTextDecoration::after {
   content: " ";
-  width: 90%;
-  height: 5px;
-  background-color: var(--pink-color);
-  position: absolute;
-  left: 50%;
-  top: 22px;
-  border-radius: 25px;
-  opacity: .8;
-  transform: translateX(-50%);
-  z-index: -1;
+  @apply w-11/12 h-1 bg-[var(--pink-color)] absolute left-1/2 top-5 rounded-3xl opacity-80 -translate-x-1/2 -z-10
 }
 
 .visibleLeft {

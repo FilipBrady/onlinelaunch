@@ -1,10 +1,19 @@
 import { useState } from 'react';
-import Divider from '../divider/Divider';
 import styles from './Navigation.module.css';
+import NavigationBurger from './NavigationBurger';
+import NavigationMenuItems from './NavigationMenuItems';
 type Props = {
-  handleClickingBtn: () => void;
+  handleClickingContactBtn: () => void;
+  handleClickingMarketingBtn: () => void;
+  handleClickingAboutUsBtn: () => void;
+  handleClickingFreeConsultationBtn: () => void;
 };
-const Navigation = ({ handleClickingBtn }: Props) => {
+const Navigation = ({
+  handleClickingContactBtn,
+  handleClickingMarketingBtn,
+  handleClickingAboutUsBtn,
+  handleClickingFreeConsultationBtn,
+}: Props) => {
   const [isNavClicked, setIsNavClicked] = useState(false);
   return (
     <div
@@ -14,73 +23,19 @@ const Navigation = ({ handleClickingBtn }: Props) => {
         <div>
           <span className='font-bold'>online</span>launch
         </div>
-        <div
-          className={`${styles.burgerNavigation}`}
-          onClick={() => setIsNavClicked(!isNavClicked)}
-        >
-          <div
-            className={
-              isNavClicked
-                ? `${styles.lineActive} ${styles.line1}`
-                : `${styles.line} ${styles.line1}`
-            }
-          ></div>
-          <div
-            className={
-              isNavClicked
-                ? `${styles.lineActive} ${styles.line2}`
-                : `${styles.line} ${styles.line2}`
-            }
-          ></div>
-          <div
-            className={
-              isNavClicked
-                ? `${styles.lineActive} ${styles.line3}`
-                : `${styles.line} ${styles.line3}`
-            }
-          ></div>
-        </div>
+        <NavigationBurger
+          isNavClicked={isNavClicked}
+          setIsNavClicked={setIsNavClicked}
+        />
       </div>
-      <div
-        className={
-          isNavClicked
-            ? `${styles.menuItems} pt-14`
-            : `${styles.menuItemsNoactive} pt-14`
-        }
-      >
-        <div className={`${styles.linksList}`}>
-          <li className={`${styles.link}`}>
-            <a href='#' className='uppercase'>
-              Online marketing
-            </a>
-            <div className={`${styles.divider}`}></div>
-          </li>
-          <li className={`${styles.link}`}>
-            <a href='#' className='uppercase'>
-              O nás
-            </a>
-            <div className={`${styles.divider}`}></div>
-          </li>
-          <li className={`${styles.link}`}>
-            <a href='#' className='uppercase'>
-              bezplatné konzultácie
-            </a>
-            <div className={`${styles.divider}`}></div>
-          </li>
-        </div>
-        <div className='mx-auto'>
-          <Divider color='white' />
-          <button
-            className='button'
-            onClick={() => {
-              handleClickingBtn();
-              setIsNavClicked(false);
-            }}
-          >
-            ZÍSKAŤ ONLINE STRATÉGIU
-          </button>
-        </div>
-      </div>
+      <NavigationMenuItems
+        isNavClicked={isNavClicked}
+        setIsNavClicked={setIsNavClicked}
+        handleClickingContactBtn={handleClickingContactBtn}
+        handleClickingMarketingBtn={handleClickingMarketingBtn}
+        handleClickingAboutUsBtn={handleClickingAboutUsBtn}
+        handleClickingFreeConsultationBtn={handleClickingFreeConsultationBtn}
+      />
     </div>
   );
 };
