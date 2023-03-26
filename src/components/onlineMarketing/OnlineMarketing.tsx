@@ -16,7 +16,7 @@ const OnlineMarketing = () => {
         className={isFirstVisible ? 'visibleRight' : ''}
       >
         <div className='textHeading my-5'>
-          Prečo{' '}
+          Prečo
           <span className='relative pinkTextDecoration'>ONLINE Marketing?</span>
         </div>
         <div className='textThin my-4'>
@@ -43,8 +43,7 @@ const OnlineMarketing = () => {
         <Image
           src={computerPhoto}
           alt='Shaking hands'
-          className='py-5 w-4/5 mx-auto'
-          mb-3
+          className='py-5 w-4/5 mx-auto mb-3'
         />
       </div>
     </div>
