@@ -3,16 +3,16 @@
   width: 60px;
   height: 60px;
   position: relative;
-  top: -35px;
+  top: -8px;
   left: 0;
-  z-index: 0;
+  z-index: 100;
 }
 
 .badgeIcon {
   background: url("../../images//badge.svg");
   width: 24px;
   height: 28px;
-  z-index: 10;
+  z-index: 200;
   position: relative;
   top: 0;
   left: 50%;

@@ -23,7 +23,7 @@ const ContentCards = () => {
   ]);
 
   return (
-    <div className='w-full bg-[#ECEAD7] h-full '>
+    <div className='w-full bg-[#ECEAD7] h-full  '>
       <div className='container'>
         {cardsContent.map(cardContent => (
           <Card key={cardContent.id} cardContent={cardContent} />
